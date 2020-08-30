@@ -1,42 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>
-Looking to Listen at the Cocktail Party:
-<br/>
-Audio-Visual Speech Separation
-</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-65563403-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html>
 
-  gtag('config', 'UA-65563403-3');
-</script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Deep Noise Supression Demo</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/css/Article-Clean.css">
+    <link rel="stylesheet" href="assets/css/trackswitch.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.rawgit.com/download/polymer-cdn/1.5.0/lib/webcomponentsjs/webcomponents-lite.min.js"></script>
 </head>
+
 <body>
-<div class="container">
-  <p>&nbsp;</p>
-  <p><span class="title">Looking to Listen at the Cocktail Party:</span></p>
-  <p><span class="title">A Speaker-Independent Audio-Visual Model for Speech Separation</span> </p>
-  <br />
-  <table border="0" align="center" class="authors">
-    <tr align="center">
-      <td><a href="http://www.cs.huji.ac.il/~arielephrat/">Ariel Ephrat</a></td>
-      <td><a href="https://research.google.com/pubs/InbarMosseri.html">Inbar Mosseri</a></td>
-      <td><a href="mailto:oranl@google.com">Oran Lang</a></td>
-      <td><a href="http://people.csail.mit.edu/talidekel/">Tali Dekel</a></td>
-      <td><a href="https://research.google.com/pubs/KevinWilson.html">Kevin Wilson</a></td>
-      <td><a href="http://u.cs.biu.ac.il/~avinatan/">Avinatan Hassidim</a></td>
-      <td><a href="https://billf.mit.edu/">William T. Freeman</a></td>
-      <td><a href="http://people.csail.mit.edu/mrub/">Michael Rubinstein</a></td>
-    </tr>
-  </table>
-  <br />
-</div>
+    <nav class="navbar navbar-light navbar-expand bg-primary navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">Reverberation Time Estimation</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <div class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center">Blind Estimation of the Subband Reverberation Time<br></h1>
+                        <p class="text-center"> </p>
+                    </div>
+                    <div class="text">
+                        <h2>Abstract</h2>
+                        <p class="text-justify"> Reverberation, in psycho-acoustics and acoustics, refers to the prolongation of sound
+in an enclosure after the sound source is switched off. A common measure of this
+property is the reverberation time (RT). Blind estimation of the subband RT is still a
+challenging task as the determination of the ground truth using the Schroeder method
+is already a demanding and tedious task.
+The aim of this research work was to investigate known and novel model-based
+approaches for the estimation of the subband RT.
+In a first step, a recently presented approach to estimate the subband RT by extrapolating
+the RTs for the higher subband from the estimates of the lower subbands
+[2] has been investigated and compared with the related approaches presented in [1].
+It turned out that the model described in [1] achieves the lowest average error per
+subband for all the tested room impulse respones.
+The development of a model for the subband RT requires large databases with
+ground truth data for the subband RTs. However, many databases with room impulse
+responses (RIRs) do not contain the ground truth data. Therefore, an approach to
+estimate the subband RT from a given RIR by means of the Schroeder method has
+been developed.
+In a next step, two model-based approaches [3] using discrete cosine transform
+(DCT) filterbanks were evaluated. Based on this and previous results, a polynomial
+regression model for the subband RTs has been investigated. The analysis results show
+that, it’s possible to approximate a model using DCT filterbanks, but it highly depends
+on the acoustic properties of the room and fullband RT range, which makes it quite
+tough to find an universal regression model with the known approaches. The mean
+absolute average error per subband for a 30 channel DCT filterbank considering all
+fullband RT range was 0.0400s for higher subands starting from the subband number
+15 and 0.1010s considering all the subbands.
+Finally, the use of artificial neural networks (ANNs) for the estimation of fullband
+RT from subband RTs as well as the estimation of the subband RT from a given RIR
+have been investigated. It turned out that the ANN model using a 30 channel DCT
+filterbank to estimate the fullband RT from subband RTs acheives 0.0048s mean square.error (MSE) and for an octave filterbank the MSE was 0.0062s. On the other hand,
+the mean square error per subband for the estimation of the subband RT from a given
+RIR was 0.0320s using a 30 channel DCT filterbank.<br></p>
+                        <figure></figure>
+                        <p></p>
+                    </div>
+                    <div class="text">
+                        <div class="text-center">
+                        <div class="text-center">
+                            <figure class="figure"><img class="img-fluid figure-img" src="DCT_full_Dataset.png">
+                                <figcaption class="figure-caption">A demo model for speech enhancement</figcaption>
+                            </figure>
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+};
+        jQuery(document).ready(function() {
+            jQuery(".choir").trackSwitch(settings); // All other players are default
+            jQuery(".piano").trackSwitch(settings);
+            jQuery(".guitar").trackSwitch(settings);
+            jQuery(".organ").trackSwitch(settings);
+        });
+    </script>
 </body>
+
 </html>
