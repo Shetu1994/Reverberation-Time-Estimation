@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Reverberation Time Estimation</title>
+    <title>Deep Noise Supression Demo</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-primary navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#">Reverberation Time Estimation</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+        <div class="container"><a class="navbar-brand" href="#">Deep Noise Supression Demo Site</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
             <div class="collapse navbar-collapse" id="navcol-1"></div>
         </div>
     </nav>
@@ -25,43 +25,15 @@
             <div class="row">
                 <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
                     <div class="intro">
-                        <h1 class="text-center">Blind Estimation of the Subband Reverberation Time<br></h1>
+                        <h1 class="text-center">Deep Learning Based Noise Suppression<br></h1>
                         <p class="text-center"> </p>
                     </div>
                     <div class="text">
                         <h2>Abstract</h2>
-                        <p class="text-justify"> Reverberation, in psycho-acoustics and acoustics, refers to the prolongation of sound
-in an enclosure after the sound source is switched off. A common measure of this
-property is the reverberation time (RT). Blind estimation of the subband RT is still a
-challenging task as the determination of the ground truth using the Schroeder method
-is already a demanding and tedious task.
-The aim of this research work was to investigate known and novel model-based
-approaches for the estimation of the subband RT.
-In a first step, a recently presented approach to estimate the subband RT by extrapolating
-the RTs for the higher subband from the estimates of the lower subbands
-[2] has been investigated and compared with the related approaches presented in [1].
-It turned out that the model described in [1] achieves the lowest average error per
-subband for all the tested room impulse respones.
-The development of a model for the subband RT requires large databases with
-ground truth data for the subband RTs. However, many databases with room impulse
-responses (RIRs) do not contain the ground truth data. Therefore, an approach to
-estimate the subband RT from a given RIR by means of the Schroeder method has
-been developed.
-In a next step, two model-based approaches [3] using discrete cosine transform
-(DCT) filterbanks were evaluated. Based on this and previous results, a polynomial
-regression model for the subband RTs has been investigated. The analysis results show
-that, it’s possible to approximate a model using DCT filterbanks, but it highly depends
-on the acoustic properties of the room and fullband RT range, which makes it quite
-tough to find an universal regression model with the known approaches. The mean
-absolute average error per subband for a 30 channel DCT filterbank considering all
-fullband RT range was 0.0400s for higher subands starting from the subband number
-15 and 0.1010s considering all the subbands.
-Finally, the use of artificial neural networks (ANNs) for the estimation of fullband
-RT from subband RTs as well as the estimation of the subband RT from a given RIR
-have been investigated. It turned out that the ANN model using a 30 channel DCT
-filterbank to estimate the fullband RT from subband RTs acheives 0.0048s mean square.error (MSE) and for an octave filterbank the MSE was 0.0062s. On the other hand,
-the mean square error per subband for the estimation of the subband RT from a given
-RIR was 0.0320s using a 30 channel DCT filterbank.<br></p>
+                        <p class="text-justify"> Noise is ubiquitous in almost all acoustic environments. The speech signal, that is recorded by a microphone is generally infected by noise originating from various sources. 
+                            Such contamination can change the characteristics of the  speech  signals  and  degrade  the  speech  quality  and  intelligibility,  thereby causing significant harm to human-to-machine communication systems. 
+                         <br><br>So to improve the quality and, if possible, also the intelligibility of a noisy speech signal, speech enhancement algorithms are employed. In this work we present a deep learning based speech enhancement algorithm
+                            which can enhance the target speech in any noisy conditions, and also can dereverb the speech signal.<br></p>
                         <figure></figure>
                         <p></p>
                     </div>
@@ -71,12 +43,30 @@ RIR was 0.0320s using a 30 channel DCT filterbank.<br></p>
                             <figure class="figure"><img class="img-fluid figure-img" src="DCT_full_Dataset.png">
                                 <figcaption class="figure-caption">A demo model for speech enhancement</figcaption>
                             </figure>
-                          </div>
+                        </div>
+                    </div>
+                        <figure></figure>
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/trackswitch.js"></script>
+    <script type="text/javascript">
+    var settings = {
+    onlyradiosolo: true,
+    repeat: true,
+};
+        jQuery(document).ready(function() {
+            jQuery(".choir").trackSwitch(settings); // All other players are default
+            jQuery(".piano").trackSwitch(settings);
+            jQuery(".guitar").trackSwitch(settings);
+            jQuery(".organ").trackSwitch(settings);
+        });
+    </script>
 </body>
-<html>
 
 </html>
